@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loginPage" class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div id="message"></div>
+    </div>
+
+    <div id="lmsPage" class="container" style="display: none;">
+    <div class="container">
+        <h1>Library Management System</h1>
+        <div class="menu">
+            <button onclick="showSection('addBook')">Add Book</button>
+            <button onclick="showSection('removeBook')">Remove Book</button>
+            <button onclick="showSection('checkOutBook')">Check Out Book</button>
+            <button onclick="showSection('returnBook')">Return Book</button>
+            <button onclick="showSection('displayBooks')">Display All Books</button>
+            <button onclick="showSection('findBook')">Find Book by ISBN</button>
+        </div>
+        
+        <div class="content">
+            <div id="addBook" class="section">
+                <h2>Add Book</h2>
+                <form id="addBookForm">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required><br>
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required><br>
+                    <label for="isbn">ISBN:</label>
+                    <input type="text" id="isbn" name="isbn" required><br>
+                    <button type="submit">Add Book</button>
+                </form>
+            </div>
+
+            <div id="removeBook" class="section">
+                <h2>Remove Book</h2>
+                <form id="removeBookForm">
+                    <label for="removeIsbn">ISBN:</label>
+                    <input type="text" id="removeIsbn" name="isbn" required><br>
+                    <button type="submit">Remove Book</button>
+                </form>
+            </div>
+
+            <div id="checkOutBook" class="section">
+                <h2>Check Out Book</h2>
+                <form id="checkOutBookForm">
+                    <label for="checkOutIsbn">ISBN:</label>
+                    <input type="text" id="checkOutIsbn" name="isbn" required><br>
+                    <button type="submit">Check Out Book</button>
+                </form>
+            </div>
+
+            <div id="returnBook" class="section">
+                <h2>Return Book</h2>
+                <form id="returnBookForm">
+                    <label for="returnIsbn">ISBN:</label>
+                    <input type="text" id="returnIsbn" name="isbn" required><br>
+                    <button type="submit">Return Book</button>
+                </form>
+            </div>
+
+            <div id="displayBooks" class="section">
+                <h2>Display All Books</h2>
+                <button onclick="displayBooks()">Display Books</button>
+                <div id="bookList"></div>
+            </div>
+
+            <div id="findBook" class="section">
+                <h2>Find Book by ISBN</h2>
+                <form id="findBookForm">
+                    <label for="findIsbn">ISBN:</label>
+                    <input type="text" id="findIsbn" name="isbn" required><br>
+                    <button type="submit">Find Book</button>
+                </form>
+                <div id="foundBook"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
